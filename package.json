@@ -1,0 +1,30 @@
+{
+  "name": "vspot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "d": "npm run development",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "w": "npm run development -- --watch",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "p": "npm run production",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "Daniel Sixl",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "laravel-mix": "^5.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
