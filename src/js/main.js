@@ -1,8 +1,12 @@
+// IMPORTS
+
+import iro from '@jaames/iro';
+
 // MISC
 
 const l = console.log;
 
-// presentation
+// CHANNEL 
 
 const user = "Daniel Sixl";
 const userId = 1;
@@ -47,13 +51,40 @@ const colorPickerSample = document.querySelector('#color-picker-container-sample
 const colorPickerInput = document.querySelector('#input-color');
 const inputErrorClassCss = 'is-danger';
 
-iro.use(iroTransparencyPlugin);
-const colorPicker = new iro.ColorPicker(colorPickerTarget, {
-    width: 260,
-    color: "rgba(255, 255, 255, 0.9)",
-    padding: 16,
-    transparency: true
-});
+const colorPickerOptions = {
+    width: 300,
+    color: "rgba(255, 255, 255, 0.80)",
+    borderWidth: 1,
+    borderColor: "#dbdbdb",
+    layout: [{
+            component: iro.ui.Wheel,
+            options: {
+                sliderType: 'hue'
+            }
+        },
+        {
+            component: iro.ui.Slider,
+            options: {
+                sliderType: 'saturation'
+            }
+        },
+        {
+            component: iro.ui.Slider,
+            options: {
+                sliderType: 'value'
+            }
+        },
+        {
+            component: iro.ui.Slider,
+            options: {
+                sliderType: 'alpha'
+            }
+        }
+    ]
+}
+
+const colorPicker = new iro.ColorPicker(colorPickerTarget, colorPickerOptions);
+
 colorPickerInput.addEventListener("keyup", updateColorPicker);
 
 function isValidHex8String(colorString) {
@@ -146,5 +177,7 @@ function sendForm(e) {
     console.groupEnd();
 
     jsonDemo.textContent = jsonOutputString;
+
+    hljs.highlightBlock(jsonDemo);
 
 }

@@ -2,22 +2,31 @@ let mix = require('laravel-mix');
 
 // javascript & stylus
 
-mix.js('src/js/main.js', 'dist/js/')
-    .stylus('src/stylus/main.styl', 'dist/css/')
-    .options({
-        processCssUrls: false
-     })
-    .setPublicPath('dist');
+mix.setPublicPath('dist').options({
+    processCssUrls: false
+});
+
+mix
+    .js('src/js/main.js', 'js')
+    .stylus('src/stylus/main.styl', 'css')
+    .combine([
+        'vendor/highlight/themes/vs2015.css',
+    ], 'dist/css/vendor.css')
+    .combine([
+        'vendor/highlight/highlight.pack.js',
+    ], 'dist/js/vendor.js');
+
+
 
 // combine vendor files
 
-    // mix.combine([
-    //     'vendor/xyz/xyz.css', 
-    // ], 'dist/css/vendor.css');
+// mix.combine([
+//     'vendor/xyz/xyz.css', 
+// ], 'dist/css/vendor.css');
 
-    // mix.combine([
-    //     'vendor/xyz/xyz.js',
-    // ], 'dist/js/vendor.js');
+// mix.combine([
+//     'vendor/xyz/xyz.js',
+// ], 'dist/js/vendor.js');
 
 // Full API
 

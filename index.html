@@ -5,31 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VSPOT</title>
-
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="./dist/css/main.css">
-
-
+    <link rel="stylesheet" href="./dist/css/vendor.css">
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="./dist/js/vendor.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-
-    <script src="//cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/iro-transparency-plugin/dist/iro-transparency-plugin.min.js"></script>
+</head>
 
 <body id="vpost">
 
+    <header class="section">
+        <div class="container">
+            <h1 class="title is-1 is-uppercase has-text-weight-semibold">Vspot <span
+                    class="has-text-grey has-text-weight-light">Presenter</span></h1>
+            <p class="subtitle is-italic">Prototype, create sample of <b>JSON</b> for a slide</p>
+        </div>
+    </header>
+
     <main id="app">
-
-
-        <section class="section">
-            <div class="container">
-                <h1 class="title is-1 is-uppercase has-text-weight-semibold">Vspot <span
-                        class="has-text-grey has-text-weight-light">Presenter</span></h1>
-                <p class="subtitle is-italic">Prototype, create sample of <b>JSON</b> for a slide</p>
-            </div>
-        </section>
-
-        <hr>
 
         <section class="section section--new-presentation">
             <div class="container">
@@ -53,17 +47,30 @@
                                 <li>Zweiter Punkt</li>
                                 <li>Dritter Punkt</li>
                             </ul>
-                            <p>Und ein kleiner Beispielsatz.</p>
+                            <p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie
+                                aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um
+                                Schriften zu testen.</p>
+                            <p>Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze
+                                »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over the lazy old dog.
+                            </p>
+                            <p>Oft werden in Typoblindtexte auch fremdsprachige Satzteile eingebaut (AVAIL® and Wefox™
+                                are testing aussi la Kerning), um die Wirkung in anderen Sprachen zu testen. In
+                                Lateinisch sieht zum Beispiel fast jede Schrift gut aus. Quod erat demonstrandum.</p>
+                            <p>Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem
+                                Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. Nichteinhaltung wird mit bis zu 245
+                                € oder 368 $ bestraft.</p>
+                            <p>Genauso wichtig in sind mittlerweile auch Âçcèñtë, die in neueren Schriften aber fast
+                                immer enthalten sind. Ein wichtiges aber schwierig zu integrierendes Feld sind
+                                OpenType-Funktionalitäten. Je nach Software und Voreinstellungen können eingebaute
+                                Kapitälchen, Kerning oder Ligaturen (sehr pfiffig) nicht richtig dargestellt werden.</p>
                         </div>
                     </div>
 
                     <div class="columns is-centered">
-                        <div class="column is-two-fifths">
-                            <div class="field">
-                                <label for="color-picker-container-slide" class="label">Overlay konfigurieren</label>
-                                <div id="color-picker-container-slide"
-                                    class="color-picker-container color-picker-container--slide"></div>
-                            </div>
+                        <div class="column is-narrow">
+                            <label for="color-picker-container-slide" class="label">Overlay konfigurieren</label>
+                            <div id="color-picker-container-slide"
+                                class="color-picker-container color-picker-container--slide"></div>
                         </div>
                         <div class="column">
                             <div id="color-picker-background">
@@ -77,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="columns is-centered">
+                    <div class="columns is-centered is-vcentered">
                         <div class="column"></div>
                         <div class="column ">
                             <div class="field">
@@ -110,18 +117,20 @@
             </div>
         </section>
 
-        <hr>
-
         <section class="section">
             <div class="container">
                 <h3 class="title is-3">JSON-Output</h3>
-                <pre class="box"><code id="json-demo">Noch kein JSON-String erzeugt.</code></pre>
+                <pre class="box"><code id="json-demo" class="language-json">Noch kein JSON-String erzeugt.</code></pre>
             </div>
         </section>
 
-
     </main>
 
+    <footer>
+        <div class="container">
+            <p>&copy; Daniel Sixl 2019 <a class="is-pulled-right" href="https://sixl.org">https://sixl.org</a></p>
+        </div>
+    </footer>
 
     <script src="./dist/js/main.js"></script>
 
